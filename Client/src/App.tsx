@@ -26,6 +26,11 @@ import AuthPage from "./pages/Auth/page";
 import ExplorePage from "./pages/Explore/page";
 
 
+// Dashboard Pages
+
+import CreatePage from "./pages/Dashboard/Create/page";
+import DashboardPage from "./pages/Dashboard/page";
+
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -57,6 +62,9 @@ function App() {
                 <Route path="/explore" element={<ExplorePage />} />
 
             </Route>
+
+            <Route path="/dashboard" element={<DashboardPage />} />
+            <Route path="/dashboard/create" element={<CreatePage />} />
 
             <Route path="*" element={<NotFoundPage />} />
 
