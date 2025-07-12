@@ -80,7 +80,7 @@ export default function CreatePage() {
   }
 
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-elysium-black via-elysium-black/95 to-elysium-purple/20">
+    <div className="flex min-h-screen bg-gradient-to-br from-elysium-black to-elysium-black/95">
       <DashboardSidebar />
 
       <main className="flex-1 lg:ml-64 p-6">
@@ -379,7 +379,7 @@ export default function CreatePage() {
                       onClick={() => handleSubmit(true)}
                       variant="outline"
                       disabled={isUploading}
-                      className="w-full border-white/20 text-white hover:bg-white/10"
+                      className="w-full border-white/20 text-black hover:bg-white/10 hover:text-white"
                     >
                       <Save className="h-4 w-4 mr-2" />
                       Save as Draft

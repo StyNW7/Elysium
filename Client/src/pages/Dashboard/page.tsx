@@ -79,7 +79,7 @@ const achievements = [
 
 export default function DashboardPage() {
   return (
-    <div className="flex min-h-screen bg-gradient-to-br from-elysium-black via-elysium-black/95 to-elysium-purple/20">
+    <div className="flex min-h-screen bg-gradient-to-br from-elysium-black to-elysium-black/95">
       <DashboardSidebar />
 
       <main className="flex-1 lg:ml-64 p-6 space-y-8">
