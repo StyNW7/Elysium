@@ -31,6 +31,16 @@ import ExplorePage from "./pages/Explore/page";
 import CreatePage from "./pages/Dashboard/Create/page";
 import DashboardPage from "./pages/Dashboard/page";
 
+
+// Content Detail Pages
+
+import MusicDetailPage from "./pages/Content/Music/page";
+import VideoDetailPage from "./pages/Content/Video/page";
+import PodcastDetailPage from "./pages/Content/Podcast/page";
+import GameDetailPage from "./pages/Content/Game/page";
+import StoryDetailPage from "./pages/Content/Story/page";
+
+
 function App() {
 
   const [loading, setLoading] = useState(true);
@@ -58,8 +68,18 @@ function App() {
               
                 <Route index element={<LandingPage/>} />
                 <Route path="/coming-soon" element={<ComingSoonPage />} />
+
                 <Route path="/auth" element={<AuthPage />} />
+
                 <Route path="/explore" element={<ExplorePage />} />
+
+                {/* Content Detail */}
+
+                <Route path="/video/:id" element={<VideoDetailPage />} />
+                <Route path="/music/:id" element={<MusicDetailPage />} />
+                <Route path="/podcast/:id" element={<PodcastDetailPage />} />
+                <Route path="/game/:id" element={<GameDetailPage />} />
+                <Route path="/story/:id" element={<StoryDetailPage />} />
 
             </Route>
 
