@@ -23,6 +23,7 @@ import ComingSoonPage from "./pages/Utility/ComingSoon";
 
 import LandingPage from "@/pages/Landing/page";
 import AuthPage from "./pages/Auth/page";
+import ExplorePage from "./pages/Explore/page";
 
 
 function App() {
@@ -53,6 +54,7 @@ function App() {
                 <Route index element={<LandingPage/>} />
                 <Route path="/coming-soon" element={<ComingSoonPage />} />
                 <Route path="/auth" element={<AuthPage />} />
+                <Route path="/explore" element={<ExplorePage />} />
 
             </Route>
 
