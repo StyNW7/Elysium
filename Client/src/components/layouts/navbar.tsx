@@ -21,11 +21,15 @@ export default function Navbar() {
   }, [])
 
   const navItems = [
-    { name: "About", href: "#about" },
-    { name: "Features", href: "#features" },
-    { name: "How it Works", href: "#how-it-works" },
-    { name: "Community", href: "#community" },
+    { name: "Home", href: "/" },
+    { name: "Explore", href: "/explore" },
+    { name: "Dashboard", href: "/dashboard" },
+    { name: "Community", href: "/community" },
   ]
+
+  const handleAuth(){
+    navigate("/auth")
+  }
 
   return (
     <motion.nav
@@ -75,7 +79,7 @@ export default function Navbar() {
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button> */}
 
-            <Button className="hidden md:flex bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white">
+            <Button className="hidden md:flex bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white" onClick={handleAuth()}>
               Join Elysium
             </Button>
 

@@ -56,11 +56,11 @@ export default function GameDetailPage() {
     comments: 678,
     description:
       "Embark on an epic journey through digital realms where reality bends to your will. Master quantum abilities, solve mind-bending puzzles, and battle against corrupted data entities in this innovative action RPG experience.",
-    coverImage: "/placeholder.svg?height=600&width=800",
+    coverImage: "/Images/Content/Elysium-Design.png?height=600&width=800",
     screenshots: [
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
-      "/placeholder.svg?height=400&width=600",
+      "/Images/Content/Elysium-Design.png?height=400&width=600",
+      "/Images/Content/Elysium-Design.png?height=400&width=600",
+      "/Images/Content/Elysium-Design.png?height=400&width=600",
     ],
     releaseDate: "2024-01-10",
     lastUpdate: "2024-01-18",
@@ -92,11 +92,11 @@ export default function GameDetailPage() {
   }
 
   const leaderboard = [
-    { rank: 1, player: "QuantumMaster", score: 98750, level: 15, avatar: "/placeholder.svg?height=32&width=32" },
-    { rank: 2, player: "DigitalNinja", score: 87420, level: 14, avatar: "/placeholder.svg?height=32&width=32" },
-    { rank: 3, player: "CodeBreaker", score: 76890, level: 13, avatar: "/placeholder.svg?height=32&width=32" },
-    { rank: 4, player: "PixelWarrior", score: 65340, level: 12, avatar: "/placeholder.svg?height=32&width=32" },
-    { rank: 5, player: "CyberExplorer", score: 54780, level: 11, avatar: "/placeholder.svg?height=32&width=32" },
+    { rank: 1, player: "QuantumMaster", score: 98750, level: 15, avatar: "/Images/Content/Elysium-Design.png?height=32&width=32" },
+    { rank: 2, player: "DigitalNinja", score: 87420, level: 14, avatar: "/Images/Content/Elysium-Design.png?height=32&width=32" },
+    { rank: 3, player: "CodeBreaker", score: 76890, level: 13, avatar: "/Images/Content/Elysium-Design.png?height=32&width=32" },
+    { rank: 4, player: "PixelWarrior", score: 65340, level: 12, avatar: "/Images/Content/Elysium-Design.png?height=32&width=32" },
+    { rank: 5, player: "CyberExplorer", score: 54780, level: 11, avatar: "/Images/Content/Elysium-Design.png?height=32&width=32" },
   ]
 
   const achievements = [
@@ -145,7 +145,7 @@ export default function GameDetailPage() {
     {
       id: "1",
       user: "GameMaster",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/Images/Content/Elysium-Design.png?height=40&width=40",
       text: "The quantum mechanics in this game are absolutely brilliant! Love the innovative gameplay.",
       time: "2 hours ago",
       likes: 45,
@@ -153,7 +153,7 @@ export default function GameDetailPage() {
     {
       id: "2",
       user: "PixelGamer",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/Images/Content/Elysium-Design.png?height=40&width=40",
       text: "Great art style and smooth controls. The puzzle elements really make you think!",
       time: "4 hours ago",
       likes: 32,
@@ -161,7 +161,7 @@ export default function GameDetailPage() {
     {
       id: "3",
       user: "RetroPlayer",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/Images/Content/Elysium-Design.png?height=40&width=40",
       text: "Reminds me of classic arcade games but with a modern twist. Highly recommended!",
       time: "6 hours ago",
       likes: 28,
@@ -216,7 +216,7 @@ export default function GameDetailPage() {
               transition={{ duration: 0.3 }}
             >
               <img
-                src={gameData.coverImage || "/placeholder.svg"}
+                src={gameData.coverImage || "/Images/Content/Elysium-Design.png"}
                 alt={gameData.title}
                 className="w-full h-full object-cover"
               />
@@ -449,7 +449,7 @@ export default function GameDetailPage() {
                       whileHover={{ scale: 1.05 }}
                     >
                       <img
-                        src={screenshot || "/placeholder.svg"}
+                        src={screenshot || "/Images/Content/Elysium-Design.png"}
                         alt={`Screenshot ${index + 1}`}
                         className="w-full h-full object-cover"
                       />
@@ -470,7 +470,7 @@ export default function GameDetailPage() {
                   {comments.map((comment) => (
                     <div key={comment.id} className="flex space-x-3">
                       <Avatar>
-                        <AvatarImage src={comment.avatar || "/placeholder.svg"} />
+                        <AvatarImage src={comment.avatar || "/Images/Content/Elysium-Design.png"} />
                         <AvatarFallback>{comment.user[0]}</AvatarFallback>
                       </Avatar>
                       <div className="flex-1">
@@ -499,7 +499,7 @@ export default function GameDetailPage() {
                 <h3 className="text-lg font-semibold mb-4">Developer</h3>
                 <div className="flex items-center space-x-3 mb-4">
                   <Avatar className="w-12 h-12">
-                    <AvatarImage src="/placeholder.svg?height=48&width=48" />
+                    <AvatarImage src="/Images/Content/Elysium-Design.png?height=48&width=48" />
                     <AvatarFallback>PF</AvatarFallback>
                   </Avatar>
                   <div>
@@ -537,7 +537,7 @@ export default function GameDetailPage() {
                             {player.rank}
                           </div>
                           <Avatar className="w-8 h-8">
-                            <AvatarImage src={player.avatar || "/placeholder.svg"} />
+                            <AvatarImage src={player.avatar || "/Images/Content/Elysium-Design.png"} />
                             <AvatarFallback>{player.player[0]}</AvatarFallback>
                           </Avatar>
                           <div className="flex-1 min-w-0">

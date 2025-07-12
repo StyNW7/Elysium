@@ -59,7 +59,7 @@ export default function PodcastDetailPage() {
     comments: 156,
     description:
       "Join us for an in-depth conversation about the intersection of technology and creativity. We explore how AI, VR, and blockchain are reshaping the creative landscape and what it means for artists, designers, and content creators.",
-    coverImage: "/placeholder.svg?height=600&width=600",
+    coverImage: "/Images/Content/podcast.png?height=600&width=600",
     audioUrl: "/placeholder-audio.mp3",
     guests: [
       {

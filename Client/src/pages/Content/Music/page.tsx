@@ -54,7 +54,7 @@ export default function MusicDetailPage() {
     album: "Cosmic Resonance",
     genre: "Ambient Electronic",
     duration: "4:00",
-    coverImage: "/placeholder.svg?height=600&width=600",
+    coverImage: "/Images/Content/music-1.png?height=600&width=600",
     audioUrl: "/placeholder-audio.mp3",
     likes: 15420,
     views: 89340,
@@ -97,7 +97,7 @@ export default function MusicDetailPage() {
     {
       id: "1",
       user: "CosmicListener",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/Images/Content/music-1.png?height=40&width=40",
       text: "This track takes me to another dimension! The ethereal quality is incredible.",
       time: "2 hours ago",
       likes: 23,
@@ -105,7 +105,7 @@ export default function MusicDetailPage() {
     {
       id: "2",
       user: "SoundExplorer",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/Images/Content/music-1.png?height=40&width=40",
       text: "Luna's production skills are getting better with each release. Love the ambient textures!",
       time: "5 hours ago",
       likes: 18,
@@ -113,7 +113,7 @@ export default function MusicDetailPage() {
     {
       id: "3",
       user: "MeditationMaster",
-      avatar: "/placeholder.svg?height=40&width=40",
+      avatar: "/Images/Content/music-1.png?height=40&width=40",
       text: "Perfect for my morning meditation sessions. Thank you for this beautiful creation.",
       time: "1 day ago",
       likes: 31,
@@ -159,7 +159,7 @@ export default function MusicDetailPage() {
               transition={{ duration: 0.3 }}
             >
               <img
-                src={musicData.coverImage || "/placeholder.svg"}
+                src={musicData.coverImage || "/Images/Content/music-1.png"}
                 alt={musicData.title}
                 className="w-full h-full object-cover"
               />
@@ -379,7 +379,7 @@ export default function MusicDetailPage() {
                   {comments.map((comment) => (
                     <div key={comment.id} className="flex space-x-3">
                       <Avatar>
-                        <AvatarImage src={comment.avatar || "/placeholder.svg"} />
+                        <AvatarImage src={comment.avatar || "/Images/Content/music-1.png"} />
                         <AvatarFallback>{comment.user[0]}</AvatarFallback>
                       </Avatar>
                       <div className="flex-1">
@@ -408,7 +408,7 @@ export default function MusicDetailPage() {
                 <h3 className="text-lg font-semibold mb-4">Creator</h3>
                 <div className="flex items-center space-x-3 mb-4">
                   <Avatar className="w-12 h-12">
-                    <AvatarImage src="/placeholder.svg?height=48&width=48" />
+                    <AvatarImage src="/Images/Content/music-1.png?height=48&width=48" />
                     <AvatarFallback>LS</AvatarFallback>
                   </Avatar>
                   <div>
