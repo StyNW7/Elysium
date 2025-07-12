@@ -30,7 +30,9 @@ import ExplorePage from "./pages/Explore/page";
 
 import CreatePage from "./pages/Dashboard/Create/page";
 import DashboardPage from "./pages/Dashboard/page";
-
+import AnalyticsPage from "./pages/Dashboard/Analytics/page";
+import SettingsPage from "./pages/Dashboard/Settings/page";
+import ContentPage from "./pages/Dashboard/Content/page";
 
 // Content Detail Pages
 
@@ -85,6 +87,9 @@ function App() {
 
             <Route path="/dashboard" element={<DashboardPage />} />
             <Route path="/dashboard/create" element={<CreatePage />} />
+            <Route path="/dashboard/analytics" element={<AnalyticsPage />} />
+            <Route path="/dashboard/content" element={<ContentPage />} />
+            <Route path="/dashboard/settings" element={<SettingsPage />} />
 
             <Route path="*" element={<NotFoundPage />} />
 

@@ -36,7 +36,7 @@ const recentContent = [
     likes: 890,
     status: "Published",
     date: "2024-01-15",
-    thumbnail: "/placeholder.svg?height=60&width=60",
+    thumbnail: "/Images/Content/Elysium-Design.png?height=60&width=60",
   },
   {
     id: 2,
@@ -46,7 +46,7 @@ const recentContent = [
     likes: 567,
     status: "Published",
     date: "2024-01-12",
-    thumbnail: "/placeholder.svg?height=60&width=60",
+    thumbnail: "/Images/Content/Elysium-Design.png?height=60&width=60",
   },
   {
     id: 3,
@@ -56,7 +56,7 @@ const recentContent = [
     likes: 1200,
     status: "Draft",
     date: "2024-01-10",
-    thumbnail: "/placeholder.svg?height=60&width=60",
+    thumbnail: "/Images/Content/Elysium-Design.png?height=60&width=60",
   },
   {
     id: 4,
@@ -66,7 +66,7 @@ const recentContent = [
     likes: 445,
     status: "Published",
     date: "2024-01-08",
-    thumbnail: "/placeholder.svg?height=60&width=60",
+    thumbnail: "/Images/Content/Elysium-Design.png?height=60&width=60",
   },
 ]
 
@@ -92,7 +92,7 @@ export default function DashboardPage() {
           <div className="absolute inset-0 bg-black/20" />
           <div className="relative z-10 flex flex-col lg:flex-row items-start lg:items-center gap-6">
             <Avatar className="h-24 w-24 border-4 border-white/20">
-              <AvatarImage src="/placeholder.svg?height=96&width=96" />
+              <AvatarImage src="/Images/Placeholder/Avatar.png?height=96&width=96" />
               <AvatarFallback className="bg-elysium-gold text-elysium-black text-2xl font-bold">EC</AvatarFallback>
             </Avatar>
 
@@ -303,7 +303,7 @@ export default function DashboardPage() {
                   className="flex items-center gap-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all duration-300"
                 >
                   <img
-                    src={content.thumbnail || "/placeholder.svg"}
+                    src={content.thumbnail || "/Images/Content/Elysium-Design.png"}
                     alt={content.title}
                     className="w-12 h-12 rounded-lg object-cover"
                   />
