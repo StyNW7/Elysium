@@ -3,13 +3,14 @@
 import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
-import { Moon, Sun, Menu, X } from "lucide-react"
-import { useTheme } from "../theme-provider"
+import { Menu, X } from "lucide-react"
+import { useNavigate } from "react-router"
 
 export default function Navbar() {
+
+  const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const { theme, setTheme } = useTheme()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -36,8 +37,9 @@ export default function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
+
           {/* Logo */}
-          <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2">
+          <motion.div whileHover={{ scale: 1.05 }} className="flex items-center space-x-2" onClick={() => navigate("/")}>
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-elysium-gold to-elysium-purple flex items-center justify-center">
               <span className="text-black font-bold text-lg">E</span>
             </div>
@@ -62,7 +64,8 @@ export default function Navbar() {
 
           {/* Right side buttons */}
           <div className="flex items-center space-x-4">
-            <Button
+            
+            {/* <Button
               variant="ghost"
               size="icon"
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
@@ -70,7 +73,7 @@ export default function Navbar() {
             >
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-            </Button>
+            </Button> */}
 
             <Button className="hidden md:flex bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white">
               Join Elysium
