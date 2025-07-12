@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
-import { useNavigate } from "react-router"
+import { useNavigate } from "react-router-dom"
 
 export default function Navbar() {
 
@@ -27,7 +27,7 @@ export default function Navbar() {
     { name: "Community", href: "/community" },
   ]
 
-  const handleAuth(){
+  function handleAuth(){
     navigate("/auth")
   }
 
@@ -79,7 +79,7 @@ export default function Navbar() {
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button> */}
 
-            <Button className="hidden md:flex bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white" onClick={handleAuth()}>
+            <Button className="hidden md:flex bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white" onClick={handleAuth}>
               Join Elysium
             </Button>
 
@@ -114,7 +114,7 @@ export default function Navbar() {
                   {item.name}
                 </a>
               ))}
-              <Button className="w-full bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white">
+              <Button className="w-full bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white" onClick={handleAuth}>
                 Join Elysium
               </Button>
             </div>
