@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"
 
 import { useState } from "react"
@@ -72,7 +73,16 @@ const originalContent = {
   },
 }
 
+type Voice = {
+  name: string
+  sample: string
+  pitch: number
+  speed: number
+  [key: string]: string | number // <- index signature
+}
+
 export default function RemixStudioPage() {
+    
   const params = useParams()
   const contentType = params.type as string
 
@@ -96,7 +106,7 @@ export default function RemixStudioPage() {
   const [storyStyle, setStoryStyle] = useState("Original")
 
   // Voice-specific states
-  const [voices, setVoices] = useState(originalContent.voice.voices)
+  const [voices, setVoices] = useState<Voice[]>([])
   const [selectedVoice, setSelectedVoice] = useState(0)
   const [globalPitch, setGlobalPitch] = useState(0)
   const [globalSpeed, setGlobalSpeed] = useState(1.0)
@@ -707,12 +717,12 @@ export default function RemixStudioPage() {
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-3">
-                    <h4 className="text-white font-medium">{originalContent[contentType]?.title}</h4>
+                    <h4 className="text-white font-medium">{originalContent.music.title}</h4>
                     <div className="flex items-center gap-2">
                       <Avatar className="h-6 w-6">
-                        <AvatarFallback className="text-xs">{originalContent[contentType]?.creator[0]}</AvatarFallback>
+                        <AvatarFallback className="text-xs">{originalContent.music.creator[0]}</AvatarFallback>
                       </Avatar>
-                      <span className="text-gray-300 text-sm">{originalContent[contentType]?.creator}</span>
+                      <span className="text-gray-300 text-sm">{originalContent.music.creator}</span>
                     </div>
                     <Badge className="bg-purple-600 text-white">
                       {contentType?.charAt(0).toUpperCase() + contentType?.slice(1)}
