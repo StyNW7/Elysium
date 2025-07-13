@@ -47,6 +47,13 @@ import LiveStreamPage from "./pages/Live/[id]/page"
 import RemixPage from "./pages/Remix/page" 
 import RemixStudioPage from "./pages/Remix/[id]/page"
 
+import AcademiumPage from "./pages/Academium/page"
+import CoursePage from "./pages/Academium/[id]/page"
+
+import AetherPage from "./pages/Aether/page"
+import CreateAetherPage from "./pages/Aether/create/page"
+import EventDetailPage from "./pages/Aether/[id]/page"
+
 // Auth Components
 import ProtectedRoute from "@/components/protected-route"
 
@@ -84,6 +91,13 @@ function App() {
 
               <Route path="/remix" element={<RemixPage />} />
               <Route path="/remix/:type/:id" element={<RemixStudioPage />} />
+
+              <Route path="/academium" element={<AcademiumPage />} />
+              <Route path="/academium/:id" element={<CoursePage />} />
+
+              <Route path="/aether" element={<AetherPage />} />
+              <Route path="/aether/create" element={<CreateAetherPage />} />
+              <Route path="/aether/:id" element={<EventDetailPage />} />
 
               {/* Content Detail */}
               <Route path="/video/:id" element={<VideoDetailPage />} />
