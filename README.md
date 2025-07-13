@@ -191,7 +191,7 @@ VITE_SUPABASE_ANON_KEY=
 
 *Overall Database System Flow:*
 <p align="center">
-  <img src="./img/SEA-Catering-Diagram.png" width="700">
+  <img src="./Images/Elysium-DB.png" width="700">
 </p>
 
 This diagram shows how the models connected using ERD Diagram
