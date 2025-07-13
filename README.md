@@ -130,58 +130,46 @@ VITE_SUPABASE_ANON_KEY=
 <table style="width:100%; text-align:center">
     <col width="100%">
     <tr>
-        <td width="1%" align="center"><img height="370" src="./img/web-preview/home-about.png"/></td>
+        <td width="1%" align="center"><img height="370" src="./Images/Preview/home.png"/></td>
     </tr>
     <tr>
-        <td width="1%" align="center">Home Page | About Section</td>
+        <td width="1%" align="center">Home Page</td>
     </tr>
     <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/home-founder.png"/></td>
+        <td width="1%" align="center"><img height="400" src="./Images/Preview/realms.png"/></td>
     </tr>
     <tr>
-        <td width="1%" align="center">Home Page | Founder Section</td>
+        <td width="1%" align="center">Realms Page</td>
     </tr>
     <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/login.png"/></td>
+        <td width="1%" align="center"><img height="400" src="./Images/Preview/content.png"/></td>
     </tr>
     <tr>
-        <td width="1%" align="center">Login Page</td>
+        <td width="1%" align="center">Content Detail Page</td>
     </tr>
     <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/register.png"/></td>
+        <td width="1%" align="center"><img height="400" src="./Images/Preview/explore.png"/></td>
     </tr>
     <tr>
-        <td width="1%" align="center">Register Page</td>
+        <td width="1%" align="center">Explore Page</td>
     </tr>
     <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/menu-page.png"/></td>
+        <td width="1%" align="center"><img height="400" src="./Images/Preview/remix-studio.png"/></td>
     </tr>
     <tr>
-        <td width="1%" align="center">Menu Page</td>
+        <td width="1%" align="center">Remix Studio Page</td>
     </tr>
     <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/testimonial-page.png"/></td>
+        <td width="1%" align="center"><img height="400" src="./Images/Preview/aether.png"/></td>
     </tr>
     <tr>
-        <td width="1%" align="center">Testimonial Page</td>
+        <td width="1%" align="center">Aether Page</td>
     </tr>
     <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/contact-page.png"/></td>
+        <td width="1%" align="center"><img height="400" src="./Images/Preview/dashboard.png"/></td>
     </tr>
     <tr>
-        <td width="1%" align="center">Contact Page</td>
-    </tr>
-    <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/user-dashboard-page.png"/></td>
-    </tr>
-    <tr>
-        <td width="1%" align="center">User Dashboard Page</td>
-    </tr>
-    <tr>
-        <td width="1%" align="center"><img height="400" src="./img/web-preview/admin-dashboard-page.png"/></td>
-    </tr>
-    <tr>
-        <td width="1%" align="center">Admin Dashboard Page</td>
+        <td width="1%" align="center">Elysian's Dashboard Page</td>
     </tr>
 </table>
 
@@ -214,4 +202,4 @@ Have questions or want to collaborate?
 - 📧 Email: stanley.n.wijaya7@gmail.com
 - 💬 Discord: `stynw7`
 
-<code>Made with ❤️ by SNW</code>
+<code>Made with ❤️ by SNW with only 1.5 days</code>
