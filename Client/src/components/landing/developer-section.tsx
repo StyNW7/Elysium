@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Github, Twitter, Coffee, Heart } from "lucide-react"
+import { Github, Instagram, Heart, Linkedin } from "lucide-react"
 
 export function DeveloperSection() {
   return (
@@ -47,23 +47,23 @@ export function DeveloperSection() {
                   >
                     <div className="w-full h-full rounded-full bg-background flex items-center justify-center">
                       <div className="w-24 h-24 rounded-full bg-gradient-to-br from-elysium-blue/20 to-elysium-purple/20 flex items-center justify-center">
-                        <span className="text-2xl font-bold text-foreground">JD</span>
+                        <span className="text-2xl font-bold text-foreground">SNW</span>
                       </div>
                     </div>
                   </motion.div>
 
-                  <h3 className="text-2xl font-bold mb-4 text-foreground">John Developer</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-foreground">Stanley Nathanael Wijaya</h3>
                   <p className="text-foreground/80 mb-6 leading-relaxed">
-                    A passionate full-stack developer with over 8 years of experience in creating immersive digital
+                    A passionate full-stack developer with over 3 years of experience in creating immersive digital
                     experiences. Driven by the vision of democratizing creativity and building tools that empower
                     everyone to become a creator.
                   </p>
 
                   <div className="flex space-x-4 mb-8">
                     {[
-                      { icon: Github, href: "#", label: "GitHub" },
-                      { icon: Twitter, href: "#", label: "Twitter" },
-                      { icon: Coffee, href: "#", label: "Buy me a coffee" },
+                      { icon: Github, href: "https://github.com/StyNW7", label: "GitHub" },
+                      { icon: Linkedin, href: "https://www.linkedin.com/in/stanley-nathanael-wijaya/", label: "Linkedin" },
+                      { icon: Instagram, href: "https://www.instagram.com/snw.77/", label: "Instagram" },
                     ].map((social, index) => (
                       <motion.a
                         key={index}
@@ -87,18 +87,18 @@ export function DeveloperSection() {
                   <div className="space-y-6">
                     {[
                       {
-                        year: "2020",
+                        year: "2025 (Q2)",
                         title: "The Idea",
                         description:
                           "Conceived the vision of a platform where anyone could create digital entertainment.",
                       },
                       {
-                        year: "2022",
+                        year: "2025 (Q3)",
                         title: "Development Begins",
                         description: "Started building the core infrastructure and creation tools.",
                       },
                       {
-                        year: "2024",
+                        year: "2026",
                         title: "Elysium Launches",
                         description: "Released the first version to the public with basic creation features.",
                       },
