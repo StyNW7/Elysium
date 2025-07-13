@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState } from "react"
@@ -27,15 +26,14 @@ import {
 
 export default function StoryDetailPage() {
   const [currentChapter, setCurrentChapter] = useState(0)
-  const [isReading, setIsReading] = useState(false)
+  const [, setIsReading] = useState(false)
   const [readingProgress, setReadingProgress] = useState(0)
   const [isLiked, setIsLiked] = useState(false)
   const [isFavorited, setIsFavorited] = useState(false)
   const [showCharacters, setShowCharacters] = useState(false)
   const [showLore, setShowLore] = useState(false)
   const [dialogMode, setDialogMode] = useState(false)
-  const [fontSize, setFontSize] = useState(16)
-  const [theme, setTheme] = useState("dark")
+  const [fontSize, ] = useState(16)
 
   const storyData = {
     id: "1",

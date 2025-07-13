@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState } from "react"
@@ -71,7 +70,7 @@ export default function CreatePage() {
     setTags(tags.filter((tag) => tag !== tagToRemove))
   }
 
-  const handleSubmit = async (isDraft: boolean) => {
+  const handleSubmit = async () => {
     setIsUploading(true)
     // Simulate upload process
     await new Promise((resolve) => setTimeout(resolve, 2000))
@@ -358,7 +357,7 @@ export default function CreatePage() {
                   {/* Action Buttons */}
                   <div className="space-y-3">
                     <Button
-                      onClick={() => handleSubmit(false)}
+                      onClick={() => handleSubmit()}
                       disabled={isUploading}
                       className="w-full bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-blue/80 hover:to-elysium-purple/80"
                     >
@@ -376,7 +375,7 @@ export default function CreatePage() {
                     </Button>
 
                     <Button
-                      onClick={() => handleSubmit(true)}
+                      onClick={() => handleSubmit()}
                       variant="outline"
                       disabled={isUploading}
                       className="w-full border-white/20 text-black hover:bg-white/10 hover:text-white"

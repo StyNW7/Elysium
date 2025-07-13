@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState } from "react"
@@ -90,7 +89,6 @@ const topContent = [
 
 export default function AnalyticsPage() {
   const [timeRange, setTimeRange] = useState("7d")
-  const [selectedMetric, setSelectedMetric] = useState("views")
 
   const stats = [
     {

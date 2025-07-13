@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -32,20 +31,17 @@ import {
 export default function MusicDetailPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
-  const [duration, setDuration] = useState(240) // 4 minutes
+  const [duration, ] = useState(240) // 4 minutes
   const [volume, setVolume] = useState([75])
   const [isLiked, setIsLiked] = useState(false)
   const [isFavorited, setIsFavorited] = useState(false)
   const [showLyrics, setShowLyrics] = useState(true)
-  const [activeEffect, setActiveEffect] = useState<string | null>(null)
 
   // Audio effects state
   const [reverb, setReverb] = useState([0])
   const [echo, setEcho] = useState([0])
   const [bass, setBass] = useState([50])
   const [treble, setTreble] = useState([50])
-
-  const audioRef = useRef<HTMLAudioElement>(null)
 
   const musicData = {
     id: "1",

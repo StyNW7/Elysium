@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState, useEffect, useCallback } from "react"
@@ -119,7 +118,6 @@ const mockContent: ElysiumContent[] = [
 ]
 
 const contentTypes = ["all", "music", "film", "game", "story", "podcast"]
-const sortOptions = ["newest", "popular", "recommended", "genre"]
 const allTags = [
   "Fantasy",
   "Chill",

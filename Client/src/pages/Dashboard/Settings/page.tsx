@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState } from "react"
@@ -77,11 +76,6 @@ export default function SettingsPage() {
   const handleSaveProfile = () => {
     // Handle profile save
     console.log("Profile saved:", profileData)
-  }
-
-  const handleSavePreferences = () => {
-    // Handle preferences save
-    console.log("Preferences saved:", preferences)
   }
 
   return (

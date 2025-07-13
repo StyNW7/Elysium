@@ -1,7 +1,6 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
-import { useState, useRef, useEffect } from "react"
+import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
@@ -34,15 +33,12 @@ import {
 export default function VideoDetailPage() {
   const [isPlaying, setIsPlaying] = useState(false)
   const [currentTime, setCurrentTime] = useState(0)
-  const [duration, setDuration] = useState(1800) // 30 minutes
+  const [duration, ] = useState(1800) // 30 minutes
   const [volume, setVolume] = useState([75])
   const [isLiked, setIsLiked] = useState(false)
   const [isFavorited, setIsFavorited] = useState(false)
-  const [isFullscreen, setIsFullscreen] = useState(false)
   const [showDescription, setShowDescription] = useState(true)
   const [quality, setQuality] = useState("1080p")
-
-  const videoRef = useRef<HTMLVideoElement>(null)
 
   const videoData = {
     id: "1",

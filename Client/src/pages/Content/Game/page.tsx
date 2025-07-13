@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState, useRef, useEffect } from "react"
@@ -39,7 +38,6 @@ export default function GameDetailPage() {
   const [isFavorited, setIsFavorited] = useState(false)
   const [showLeaderboard, setShowLeaderboard] = useState(false)
   const [showAchievements, setShowAchievements] = useState(false)
-  const [gameMode, setGameMode] = useState("story")
   const [difficulty, setDifficulty] = useState("normal")
 
   const gameRef = useRef<HTMLDivElement>(null)
