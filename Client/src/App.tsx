@@ -33,6 +33,10 @@ import PodcastDetailPage from "./pages/Content/Podcast/page"
 import GameDetailPage from "./pages/Content/Game/page"
 import StoryDetailPage from "./pages/Content/Story/page"
 
+// Realsm Page
+import RealmsPage from "./pages/Realms/page"
+import RealmDetailPage from "./pages/Realms/[id]/page"
+
 // Auth Components
 import ProtectedRoute from "@/components/protected-route"
 
@@ -57,6 +61,9 @@ function App() {
               <Route path="/coming-soon" element={<ComingSoonPage />} />
               <Route path="/auth" element={<AuthPage />} />
               <Route path="/explore" element={<ExplorePage />} />
+
+              <Route path="/realms" element={<RealmsPage />} />
+              <Route path="/realms/:id" element={<RealmDetailPage />} />
 
               {/* Content Detail */}
               <Route path="/video/:id" element={<VideoDetailPage />} />

@@ -23,7 +23,7 @@ export default function Navbar() {
   const navItems = [
     { name: "Home", href: "/" },
     { name: "Explore", href: "/explore" },
-    { name: "Dashboard", href: "/dashboard" },
+    { name: "Realms", href: "/realms" },
     { name: "Community", href: "/community" },
   ]
 
