@@ -41,6 +41,12 @@ import RealmDetailPage from "./pages/Realms/[id]/page"
 import EchoesPage from "./pages/Echoes/page"
 import MarketplacePage from "./pages/Marketplace/page"
 
+import LivePage from "./pages/Live/page"
+import LiveStreamPage from "./pages/Live/[id]/page"
+
+import RemixPage from "./pages/Remix/page" 
+import RemixStudioPage from "./pages/Remix/[id]/page"
+
 // Auth Components
 import ProtectedRoute from "@/components/protected-route"
 
@@ -61,6 +67,7 @@ function App() {
         {!loading && (
           <Routes>
             <Route path="/" element={<Layout />}>
+
               <Route index element={<LandingPage />} />
               <Route path="/coming-soon" element={<ComingSoonPage />} />
               <Route path="/auth" element={<AuthPage />} />
@@ -72,12 +79,19 @@ function App() {
               <Route path="/echoes" element={<EchoesPage />} />
               <Route path="/marketplace" element={<MarketplacePage />} />
 
+              <Route path="/live" element={<LivePage />} />
+              <Route path="/live/:id" element={<LiveStreamPage />} />
+
+              <Route path="/remix" element={<RemixPage />} />
+              <Route path="/remix/:type/:id" element={<RemixStudioPage />} />
+
               {/* Content Detail */}
               <Route path="/video/:id" element={<VideoDetailPage />} />
               <Route path="/music/:id" element={<MusicDetailPage />} />
               <Route path="/podcast/:id" element={<PodcastDetailPage />} />
               <Route path="/game/:id" element={<GameDetailPage />} />
               <Route path="/story/:id" element={<StoryDetailPage />} />
+
             </Route>
 
             {/* Protected Dashboard Routes */}
