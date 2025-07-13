@@ -54,6 +54,8 @@ import AetherPage from "./pages/Aether/page"
 import CreateAetherPage from "./pages/Aether/create/page"
 import EventDetailPage from "./pages/Aether/[id]/page"
 
+import FeaturesPage from "./pages/Features/page"
+
 // Auth Components
 import ProtectedRoute from "@/components/protected-route"
 
@@ -98,6 +100,8 @@ function App() {
               <Route path="/aether" element={<AetherPage />} />
               <Route path="/aether/create" element={<CreateAetherPage />} />
               <Route path="/aether/:id" element={<EventDetailPage />} />
+
+              <Route path="/features" element={<FeaturesPage />} />
 
               {/* Content Detail */}
               <Route path="/video/:id" element={<VideoDetailPage />} />

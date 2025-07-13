@@ -28,7 +28,7 @@ export default function Navbar() {
     { name: "Home", href: "/" },
     { name: "Explore", href: "/explore" },
     { name: "Realms", href: "/realms" },
-    { name: "Community", href: "/community" },
+    { name: "All Elysium Features", href: "/features" },
   ]
 
   function handleAuth(){
