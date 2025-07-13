@@ -1,1 +1,1 @@
-# Elysium Frontend and Backend Fullstack Web
+# Elysium - Fullstack Web Application
