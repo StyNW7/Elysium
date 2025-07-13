@@ -37,6 +37,9 @@ import StoryDetailPage from "./pages/Content/Story/page"
 import RealmsPage from "./pages/Realms/page"
 import RealmDetailPage from "./pages/Realms/[id]/page"
 
+// All Amazing Features of Elysium
+import EchoesPage from "./pages/Echoes/page"
+
 // Auth Components
 import ProtectedRoute from "@/components/protected-route"
 
@@ -64,6 +67,8 @@ function App() {
 
               <Route path="/realms" element={<RealmsPage />} />
               <Route path="/realms/:id" element={<RealmDetailPage />} />
+
+              <Route path="/echoes" element={<EchoesPage />} />
 
               {/* Content Detail */}
               <Route path="/video/:id" element={<VideoDetailPage />} />
