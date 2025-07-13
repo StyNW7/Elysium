@@ -27,7 +27,7 @@ import {
   Download,
   ExternalLink,
 } from "lucide-react"
-import { DashboardSidebar } from "@/components/Dashboard/dashboard-sidebar"
+import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 
 const contentData = [

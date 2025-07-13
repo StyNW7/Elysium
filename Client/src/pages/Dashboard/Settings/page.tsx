@@ -37,7 +37,7 @@ import {
   Sun,
   Plus,
 } from "lucide-react"
-import { DashboardSidebar } from "@/components/Dashboard/dashboard-sidebar"
+import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar"
 
 export default function SettingsPage() {
   const [profileData, setProfileData] = useState({

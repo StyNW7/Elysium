@@ -28,7 +28,7 @@ import {
   Save,
   Send,
 } from "lucide-react"
-import { DashboardSidebar } from "@/components/Dashboard/dashboard-sidebar"
+import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar"
 
 const contentTypes = [
   { id: "music", label: "Music", icon: Music, color: "from-elysium-gold to-elysium-blue" },

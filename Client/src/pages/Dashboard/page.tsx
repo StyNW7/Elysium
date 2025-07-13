@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Progress } from "@/components/ui/progress"
 import { Eye, Heart, Star, TrendingUp, Users, Play, Calendar, Award, Zap, Crown } from "lucide-react"
-import { DashboardSidebar } from "@/components/Dashboard/dashboard-sidebar"
+import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar"
 import { XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area, BarChart, Bar } from "recharts"
 
 const viewsData = [

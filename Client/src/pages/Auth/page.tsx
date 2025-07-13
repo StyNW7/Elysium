@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
 
 import { useState } from "react"
@@ -35,7 +34,7 @@ export default function AuthPage() {
     setIsLoading(true)
 
     try {
-      const { data, error } = await supabase.auth.signInWithPassword({
+      const { error } = await supabase.auth.signInWithPassword({
         email: formData.email,
         password: formData.password
       })
@@ -43,7 +42,7 @@ export default function AuthPage() {
       if (error) throw error
 
       toast.success("Logged in successfully!")
-      navigate("/dashboard") // Redirect to dashboard after login
+      navigate("/dashboard")
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Login failed")
     } finally {
@@ -54,7 +53,6 @@ export default function AuthPage() {
   const handleSignUp = async (e: React.FormEvent) => {
     e.preventDefault()
     
-    // Validate passwords match
     if (formData.password !== formData.confirmPassword) {
       toast.error("Passwords don't match")
       return
@@ -63,8 +61,7 @@ export default function AuthPage() {
     setIsLoading(true)
 
     try {
-      // First sign up the user
-      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+      const { error: signUpError } = await supabase.auth.signUp({
         email: formData.email,
         password: formData.password,
         options: {
@@ -76,16 +73,7 @@ export default function AuthPage() {
 
       if (signUpError) throw signUpError
 
-      // If email confirmation is enabled, inform user to check their email
       toast.success("Account created! Please check your email for confirmation.")
-      
-      // Optional: Automatically log them in after signup
-      // const { data: loginData, error: loginError } = await supabase.auth.signInWithPassword({
-      //   email: formData.email,
-      //   password: formData.password
-      // })
-      // if (loginError) throw loginError
-      // navigate("/dashboard")
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Sign up failed")
     } finally {
@@ -93,9 +81,57 @@ export default function AuthPage() {
     }
   }
 
+  const handlePasswordReset = async () => {
+    const email = prompt("Please enter your email for password reset:")
+    if (email) {
+      const { error } = await supabase.auth.resetPasswordForEmail(email)
+      if (error) {
+        toast.error(error.message)
+      } else {
+        toast.success("Password reset link sent to your email!")
+      }
+    }
+  }
+
   return (
     <div className="min-h-screen relative overflow-hidden py-14">
-      {/* ... (keep all your existing background and decorative elements) ... */}
+      {/* Animated Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#171717] via-[#2a2a2a] to-[#171717] dark:from-[#0a0a0a] dark:via-[#1a1a1a] dark:to-[#0a0a0a]">
+        <div className="absolute inset-0 bg-gradient-to-r from-[#6a75f1]/10 via-[#a28ad6]/10 to-[#f5d87a]/10 animate-pulse" />
+
+        {/* Floating Particles */}
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute w-2 h-2 bg-gradient-to-r from-[#6a75f1] to-[#a28ad6] rounded-full opacity-30"
+            animate={{
+              x: [0, 100, 0],
+              y: [0, -100, 0],
+              scale: [1, 1.5, 1],
+            }}
+            transition={{
+              duration: 10 + i * 2,
+              repeat: Number.POSITIVE_INFINITY,
+              ease: "easeInOut",
+            }}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Back Button */}
+      <a href="/">
+        <Button
+          variant="ghost"
+          className="absolute top-20 left-6 z-50 text-white hover:bg-white/10 border border-white/20"
+        >
+          <ArrowLeft className="w-4 h-4 mr-2" />
+          Back to Home
+        </Button>
+      </a>
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
@@ -107,13 +143,37 @@ export default function AuthPage() {
         >
           <Card className="backdrop-blur-xl bg-white/10 dark:bg-black/20 border-white/20 shadow-2xl">
             <CardHeader className="text-center space-y-4">
-              {/* ... (keep your card header content) ... */}
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ delay: 0.2, type: "spring" }}
+                className="mx-auto w-16 h-16 bg-gradient-to-r from-[#6a75f1] to-[#a28ad6] rounded-full flex items-center justify-center"
+              >
+                <Sparkles className="w-8 h-8 text-white" />
+              </motion.div>
+              <div>
+                <CardTitle className="text-2xl font-bold bg-gradient-to-r from-[#f5d87a] to-[#6a75f1] bg-clip-text text-transparent">
+                  Welcome to Elysium
+                </CardTitle>
+                <CardDescription className="text-white/70">Where imagination becomes entertainment</CardDescription>
+              </div>
             </CardHeader>
 
             <CardContent>
               <Tabs defaultValue="login" className="space-y-6">
                 <TabsList className="grid w-full grid-cols-2 bg-white/10 border border-white/20">
-                  {/* ... (keep your tabs list) ... */}
+                  <TabsTrigger
+                    value="login"
+                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#6a75f1] data-[state=active]:to-[#a28ad6] data-[state=active]:text-white"
+                  >
+                    Login
+                  </TabsTrigger>
+                  <TabsTrigger
+                    value="register"
+                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#6a75f1] data-[state=active]:to-[#a28ad6] data-[state=active]:text-white"
+                  >
+                    Register
+                  </TabsTrigger>
                 </TabsList>
 
                 <AnimatePresence mode="wait">
@@ -194,17 +254,7 @@ export default function AuthPage() {
                         <Button 
                           variant="link" 
                           className="text-[#f5d87a] hover:text-[#f5d87a]/80"
-                          onClick={async () => {
-                            const email = prompt("Please enter your email for password reset:")
-                            if (email) {
-                              const { error } = await supabase.auth.resetPasswordForEmail(email)
-                              if (error) {
-                                toast.error(error.message)
-                              } else {
-                                toast.success("Password reset link sent to your email!")
-                              }
-                            }
-                          }}
+                          onClick={handlePasswordReset}
                         >
                           Forgot your password?
                         </Button>
@@ -239,13 +289,13 @@ export default function AuthPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="register-email" className="text-white/90">
+                        <Label htmlFor="email" className="text-white/90">
                           Email
                         </Label>
                         <div className="relative">
                           <Mail className="absolute left-3 top-3 w-4 h-4 text-white/50" />
                           <Input
-                            id="email" // Changed from register-email to email for consistency
+                            id="email"
                             type="email"
                             placeholder="Enter your email"
                             className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
@@ -257,13 +307,13 @@ export default function AuthPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="register-password" className="text-white/90">
+                        <Label htmlFor="password" className="text-white/90">
                           Password
                         </Label>
                         <div className="relative">
                           <Lock className="absolute left-3 top-3 w-4 h-4 text-white/50" />
                           <Input
-                            id="password" // Changed from register-password to password for consistency
+                            id="password"
                             type={showPassword ? "text" : "password"}
                             placeholder="Create a password"
                             className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
@@ -288,7 +338,7 @@ export default function AuthPage() {
                       </div>
 
                       <div className="space-y-2">
-                        <Label htmlFor="confirm-password" className="text-white/90">
+                        <Label htmlFor="confirmPassword" className="text-white/90">
                           Confirm Password
                         </Label>
                         <div className="relative">

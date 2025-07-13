@@ -19,7 +19,7 @@ import {
   Target,
   Zap,
 } from "lucide-react"
-import { DashboardSidebar } from "@/components/Dashboard/dashboard-sidebar"
+import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar"
 import {
   AreaChart,
   Area,
@@ -279,7 +279,7 @@ export default function AnalyticsPage() {
                           outerRadius={80}
                           fill="#8884d8"
                           dataKey="value"
-                          label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                          label={({ name, percent }) => `${name} ${(percent || 1 * 100).toFixed(0)}%`}
                         >
                           {contentTypeData.map((entry, index) => (
                             <Cell key={`cell-${index}`} fill={entry.color} />
