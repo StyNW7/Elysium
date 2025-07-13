@@ -53,9 +53,9 @@
 <kbd><img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/shadcn_ui.png" height="60" /></kbd>
 <kbd><img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/supabase.png" height="60" /></kbd>
 <kbd><img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" height="60" /></kbd>
-<kbd><img src="https://seeklogo.com/images/O/openai-logo-8B9BFEDC26-seeklogo.com.png" height="60" /></kbd>
+<kbd><img src="./Images//Tech/openai-logo.png" height="60" /></kbd>
 <kbd><img src="https://raw.githubusercontent.com/marwin1991/profile-technology-icons/refs/heads/main/icons/python.png" height="60" /></kbd>
-<kbd><img src="./Images/cloudinary-logo.png" height="60" /></kbd>
+<kbd><img src="./Images/Tech/cloudinary-logo.png" height="60" /></kbd>
 
 </div>
 
