@@ -38,6 +38,10 @@
 <ul>
     <li><b>Notion Documentation (Full Details)</b></li>
     <a href="https://stanley-n-wijaya.notion.site/Elysium-Documentation-22e73555b71f8064897ad2a95a262a3c?source=copy_link">Elysium Notion Documentation</a>
+    <li><b>Canva Pitch Deck</b></li>
+    <a href="https://www.canva.com/design/DAGs9MIU-QE/cVH206ZkET2Q4O6v8fYx0Q/edit?utm_content=DAGs9MIU-QE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">Canva Pitch Deck</a>
+    <li><b>YouTube Demo Video</b></li>
+    <a href="https://youtu.be/B7ezEsK2zAE">YouTube Demo Video</a>
 </ul>
 
 ---
