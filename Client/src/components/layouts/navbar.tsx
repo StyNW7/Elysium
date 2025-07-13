@@ -6,7 +6,11 @@ import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useNavigate } from "react-router-dom"
 
+import { useAuth } from '@/context/AuthContext'
+
 export default function Navbar() {
+
+  const { isLoggedIn } = useAuth()
 
   const navigate = useNavigate()
   const [isScrolled, setIsScrolled] = useState(false)
@@ -29,6 +33,10 @@ export default function Navbar() {
 
   function handleAuth(){
     navigate("/auth")
+  }
+
+  function handleDashboard(){
+    navigate("/dashboard")
   }
 
   return (
@@ -78,6 +86,19 @@ export default function Navbar() {
               <Sun className="h-5 w-5 rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
               <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
             </Button> */}
+
+            {isLoggedIn && (
+              <Button 
+                variant="outline"
+                className="hidden md:flex relative overflow-hidden bg-transparent hover:bg-transparent group"
+                onClick={handleDashboard}
+              >
+                <span className="absolute inset-0 bg-gradient-to-r from-elysium-blue to-elysium-purple opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                <span className="relative z-10 bg-clip-text text-transparent bg-gradient-to-r from-elysium-blue to-elysium-purple group-hover:text-white transition-colors duration-300">
+                  Dashboard
+                </span>
+              </Button>
+            )}
 
             <Button className="hidden md:flex bg-gradient-to-r from-elysium-blue to-elysium-purple hover:from-elysium-purple hover:to-elysium-blue text-white" onClick={handleAuth}>
               Join Elysium
