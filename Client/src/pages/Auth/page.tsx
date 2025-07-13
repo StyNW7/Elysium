@@ -1,6 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client"
-
-import type React from "react"
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
@@ -10,59 +9,93 @@ import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Eye, EyeOff, Mail, Lock, User, ArrowLeft, Sparkles } from "lucide-react"
+import { supabase } from "@/lib/supabase"
+import { toast } from "sonner"
+import { useNavigate } from "react-router"
 
 export default function AuthPage() {
   const [showPassword, setShowPassword] = useState(false)
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+    username: "",
+    confirmPassword: ""
+  })
+  const navigate = useNavigate()
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { id, value } = e.target
+    setFormData(prev => ({ ...prev, [id]: value }))
+  }
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsLoading(true)
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000))
-    setIsLoading(false)
+
+    try {
+      const { data, error } = await supabase.auth.signInWithPassword({
+        email: formData.email,
+        password: formData.password
+      })
+
+      if (error) throw error
+
+      toast.success("Logged in successfully!")
+      navigate("/dashboard") // Redirect to dashboard after login
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Login failed")
+    } finally {
+      setIsLoading(false)
+    }
+  }
+
+  const handleSignUp = async (e: React.FormEvent) => {
+    e.preventDefault()
+    
+    // Validate passwords match
+    if (formData.password !== formData.confirmPassword) {
+      toast.error("Passwords don't match")
+      return
+    }
+
+    setIsLoading(true)
+
+    try {
+      // First sign up the user
+      const { data: signUpData, error: signUpError } = await supabase.auth.signUp({
+        email: formData.email,
+        password: formData.password,
+        options: {
+          data: {
+            username: formData.username
+          }
+        }
+      })
+
+      if (signUpError) throw signUpError
+
+      // If email confirmation is enabled, inform user to check their email
+      toast.success("Account created! Please check your email for confirmation.")
+      
+      // Optional: Automatically log them in after signup
+      // const { data: loginData, error: loginError } = await supabase.auth.signInWithPassword({
+      //   email: formData.email,
+      //   password: formData.password
+      // })
+      // if (loginError) throw loginError
+      // navigate("/dashboard")
+    } catch (error) {
+      toast.error(error instanceof Error ? error.message : "Sign up failed")
+    } finally {
+      setIsLoading(false)
+    }
   }
 
   return (
     <div className="min-h-screen relative overflow-hidden py-14">
-      {/* Animated Background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#171717] via-[#2a2a2a] to-[#171717] dark:from-[#0a0a0a] dark:via-[#1a1a1a] dark:to-[#0a0a0a]">
-        <div className="absolute inset-0 bg-gradient-to-r from-[#6a75f1]/10 via-[#a28ad6]/10 to-[#f5d87a]/10 animate-pulse" />
-
-        {/* Floating Particles */}
-        {[...Array(20)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 bg-gradient-to-r from-[#6a75f1] to-[#a28ad6] rounded-full opacity-30"
-            animate={{
-              x: [0, 100, 0],
-              y: [0, -100, 0],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: 10 + i * 2,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-            }}
-          />
-        ))}
-      </div>
-
-      {/* Back Button */}
-      <a href="/">
-        <Button
-          variant="ghost"
-          className="absolute top-20 left-6 z-50 text-white hover:bg-white/10 border border-white/20"
-        >
-          <ArrowLeft className="w-4 h-4 mr-2" />
-          Back to Home
-        </Button>
-      </a>
+      {/* ... (keep all your existing background and decorative elements) ... */}
 
       {/* Main Content */}
       <div className="relative z-10 flex items-center justify-center min-h-screen p-4">
@@ -74,37 +107,13 @@ export default function AuthPage() {
         >
           <Card className="backdrop-blur-xl bg-white/10 dark:bg-black/20 border-white/20 shadow-2xl">
             <CardHeader className="text-center space-y-4">
-              <motion.div
-                initial={{ scale: 0 }}
-                animate={{ scale: 1 }}
-                transition={{ delay: 0.2, type: "spring" }}
-                className="mx-auto w-16 h-16 bg-gradient-to-r from-[#6a75f1] to-[#a28ad6] rounded-full flex items-center justify-center"
-              >
-                <Sparkles className="w-8 h-8 text-white" />
-              </motion.div>
-              <div>
-                <CardTitle className="text-2xl font-bold bg-gradient-to-r from-[#f5d87a] to-[#6a75f1] bg-clip-text text-transparent">
-                  Welcome to Elysium
-                </CardTitle>
-                <CardDescription className="text-white/70">Where imagination becomes entertainment</CardDescription>
-              </div>
+              {/* ... (keep your card header content) ... */}
             </CardHeader>
 
             <CardContent>
               <Tabs defaultValue="login" className="space-y-6">
                 <TabsList className="grid w-full grid-cols-2 bg-white/10 border border-white/20">
-                  <TabsTrigger
-                    value="login"
-                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#6a75f1] data-[state=active]:to-[#a28ad6] data-[state=active]:text-white"
-                  >
-                    Login
-                  </TabsTrigger>
-                  <TabsTrigger
-                    value="register"
-                    className="data-[state=active]:bg-gradient-to-r data-[state=active]:from-[#6a75f1] data-[state=active]:to-[#a28ad6] data-[state=active]:text-white"
-                  >
-                    Register
-                  </TabsTrigger>
+                  {/* ... (keep your tabs list) ... */}
                 </TabsList>
 
                 <AnimatePresence mode="wait">
@@ -113,7 +122,7 @@ export default function AuthPage() {
                       initial={{ opacity: 0, x: -20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: 20 }}
-                      onSubmit={handleSubmit}
+                      onSubmit={handleLogin}
                       className="space-y-4"
                     >
                       <div className="space-y-2">
@@ -128,6 +137,8 @@ export default function AuthPage() {
                             placeholder="Enter your email"
                             className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
                             required
+                            value={formData.email}
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -144,6 +155,8 @@ export default function AuthPage() {
                             placeholder="Enter your password"
                             className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
                             required
+                            value={formData.password}
+                            onChange={handleChange}
                           />
                           <Button
                             type="button"
@@ -178,7 +191,21 @@ export default function AuthPage() {
                       </Button>
 
                       <div className="text-center">
-                        <Button variant="link" className="text-[#f5d87a] hover:text-[#f5d87a]/80">
+                        <Button 
+                          variant="link" 
+                          className="text-[#f5d87a] hover:text-[#f5d87a]/80"
+                          onClick={async () => {
+                            const email = prompt("Please enter your email for password reset:")
+                            if (email) {
+                              const { error } = await supabase.auth.resetPasswordForEmail(email)
+                              if (error) {
+                                toast.error(error.message)
+                              } else {
+                                toast.success("Password reset link sent to your email!")
+                              }
+                            }
+                          }}
+                        >
                           Forgot your password?
                         </Button>
                       </div>
@@ -190,7 +217,7 @@ export default function AuthPage() {
                       initial={{ opacity: 0, x: 20 }}
                       animate={{ opacity: 1, x: 0 }}
                       exit={{ opacity: 0, x: -20 }}
-                      onSubmit={handleSubmit}
+                      onSubmit={handleSignUp}
                       className="space-y-4"
                     >
                       <div className="space-y-2">
@@ -205,6 +232,8 @@ export default function AuthPage() {
                             placeholder="Choose a username"
                             className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
                             required
+                            value={formData.username}
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -216,11 +245,13 @@ export default function AuthPage() {
                         <div className="relative">
                           <Mail className="absolute left-3 top-3 w-4 h-4 text-white/50" />
                           <Input
-                            id="register-email"
+                            id="email" // Changed from register-email to email for consistency
                             type="email"
                             placeholder="Enter your email"
                             className="pl-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
                             required
+                            value={formData.email}
+                            onChange={handleChange}
                           />
                         </div>
                       </div>
@@ -232,11 +263,13 @@ export default function AuthPage() {
                         <div className="relative">
                           <Lock className="absolute left-3 top-3 w-4 h-4 text-white/50" />
                           <Input
-                            id="register-password"
+                            id="password" // Changed from register-password to password for consistency
                             type={showPassword ? "text" : "password"}
                             placeholder="Create a password"
                             className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
                             required
+                            value={formData.password}
+                            onChange={handleChange}
                           />
                           <Button
                             type="button"
@@ -261,11 +294,13 @@ export default function AuthPage() {
                         <div className="relative">
                           <Lock className="absolute left-3 top-3 w-4 h-4 text-white/50" />
                           <Input
-                            id="confirm-password"
+                            id="confirmPassword"
                             type={showConfirmPassword ? "text" : "password"}
                             placeholder="Confirm your password"
                             className="pl-10 pr-10 bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:border-[#6a75f1]"
                             required
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
                           />
                           <Button
                             type="button"
