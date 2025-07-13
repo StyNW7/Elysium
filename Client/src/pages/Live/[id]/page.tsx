@@ -35,7 +35,7 @@ const liveStreamData = {
   title: "Creating Epic Fantasy Soundscapes Live",
   creator: {
     name: "Alex Chen",
-    avatar: "/placeholder-user.jpg",
+    avatar: "/Images/Placeholder/Avatar.png",
     verified: true,
     followers: 15400,
     bio: "Professional music producer specializing in cinematic and fantasy soundscapes",
@@ -43,41 +43,41 @@ const liveStreamData = {
   category: "Music",
   viewers: 2847,
   likes: 1234,
-  thumbnail: "/placeholder.jpg",
+  thumbnail: "/Images/Content/Elysium-Design.png",
   tags: ["Fantasy", "Ambient", "Live Creation"],
   duration: "2:34:12",
   isLive: true,
   description:
     "Join me as I create an epic fantasy soundscape from scratch using various synthesizers and field recordings. We'll explore different techniques for creating atmospheric music.",
-  streamUrl: "/placeholder.jpg", // This would be the actual stream URL
+  streamUrl: "/Images/Content/Elysium-Design.png", // This would be the actual stream URL
 }
 
 // Mock chat messages
 const initialChatMessages = [
   {
     id: "1",
-    user: { name: "MusicLover42", avatar: "/placeholder-user.jpg", verified: false },
+    user: { name: "MusicLover42", avatar: "/Images/Placeholder/Avatar.png", verified: false },
     message: "This sounds amazing! 🎵",
     timestamp: "2:34:10",
     isSupporter: false,
   },
   {
     id: "2",
-    user: { name: "FantasyFan", avatar: "/placeholder-user.jpg", verified: true },
+    user: { name: "FantasyFan", avatar: "/Images/Placeholder/Avatar.png", verified: true },
     message: "Can you show us how you layer the strings?",
     timestamp: "2:34:08",
     isSupporter: true,
   },
   {
     id: "3",
-    user: { name: "AudioEngineer", avatar: "/placeholder-user.jpg", verified: false },
+    user: { name: "AudioEngineer", avatar: "/Images/Placeholder/Avatar.png", verified: false },
     message: "What DAW are you using for this?",
     timestamp: "2:34:05",
     isSupporter: false,
   },
   {
     id: "4",
-    user: { name: "CreativeSpirit", avatar: "/placeholder-user.jpg", verified: false },
+    user: { name: "CreativeSpirit", avatar: "/Images/Placeholder/Avatar.png", verified: false },
     message: "Just followed! Your work is incredible 🔥",
     timestamp: "2:34:02",
     isSupporter: false,
@@ -97,7 +97,7 @@ export default function LiveStreamPage() {
     if (newMessage.trim()) {
       const message = {
         id: Date.now().toString(),
-        user: { name: "You", avatar: "/placeholder-user.jpg", verified: false },
+        user: { name: "You", avatar: "/Images/Placeholder/Avatar.png", verified: false },
         message: newMessage,
         timestamp: new Date().toLocaleTimeString().slice(0, -3),
         isSupporter: false,
@@ -120,7 +120,7 @@ export default function LiveStreamPage() {
               className="relative bg-black rounded-lg overflow-hidden mb-6 aspect-video"
             >
               <img
-                src={liveStreamData.streamUrl || "/placeholder.svg"}
+                src={liveStreamData.streamUrl || "/Images/Content/Elysium-Design.png"}
                 alt="Live Stream"
                 className="w-full h-full object-cover"
               />

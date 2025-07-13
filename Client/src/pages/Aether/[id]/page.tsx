@@ -42,10 +42,10 @@ const eventData = {
   maxAttendees: 20000,
   status: "upcoming",
   featured: true,
-  image: "/placeholder.jpg",
+  image: "/Images/Content/Elysium-Design.png",
   host: {
     name: "Elysium Music Collective",
-    avatar: "/placeholder-user.jpg",
+    avatar: "/Images/Placeholder/Avatar.png",
     verified: true,
     followers: 125000,
     bio: "Pioneering the future of AI-generated music and virtual performances in Elysium.",
@@ -64,15 +64,15 @@ const eventData = {
     { time: "21:55", title: "Closing & Community Celebration", duration: "15 min" },
   ],
   performers: [
-    { name: "AI Maestro Alpha", role: "Lead Conductor", avatar: "/placeholder-user.jpg" },
-    { name: "Virtual Philharmonic", role: "Orchestra", avatar: "/placeholder-user.jpg" },
-    { name: "Harmony AI", role: "Composer", avatar: "/placeholder-user.jpg" },
-    { name: "Echo Ensemble", role: "Choir", avatar: "/placeholder-user.jpg" },
+    { name: "AI Maestro Alpha", role: "Lead Conductor", avatar: "/Images/Placeholder/Avatar.png" },
+    { name: "Virtual Philharmonic", role: "Orchestra", avatar: "/Images/Placeholder/Avatar.png" },
+    { name: "Harmony AI", role: "Composer", avatar: "/Images/Placeholder/Avatar.png" },
+    { name: "Echo Ensemble", role: "Choir", avatar: "/Images/Placeholder/Avatar.png" },
   ],
   sponsors: [
-    { name: "Elysium Foundation", logo: "/placeholder-logo.svg" },
-    { name: "AI Music Labs", logo: "/placeholder-logo.svg" },
-    { name: "Virtual Instruments Co.", logo: "/placeholder-logo.svg" },
+    { name: "Elysium Foundation", logo: "/Images/Elysium-Logo-Withbg.png" },
+    { name: "AI Music Labs", logo: "/Images/Elysium-Logo-Withbg.png" },
+    { name: "Virtual Instruments Co.", logo: "/Images/Elysium-Logo-Withbg.png" },
   ],
 }
 
@@ -80,7 +80,7 @@ const chatMessages = [
   {
     id: 1,
     user: "MusicLover42",
-    avatar: "/placeholder-user.jpg",
+    avatar: "/Images/Placeholder/Avatar.png",
     message: "Can't wait for this! 🎵",
     timestamp: "2 min ago",
     isSupporter: false,
@@ -88,7 +88,7 @@ const chatMessages = [
   {
     id: 2,
     user: "AIEnthusiast",
-    avatar: "/placeholder-user.jpg",
+    avatar: "/Images/Placeholder/Avatar.png",
     message: "This is going to be revolutionary!",
     timestamp: "3 min ago",
     isSupporter: true,
@@ -96,7 +96,7 @@ const chatMessages = [
   {
     id: 3,
     user: "SymphonyFan",
-    avatar: "/placeholder-user.jpg",
+    avatar: "/Images/Placeholder/Avatar.png",
     message: "First AI symphony ever? Historic moment!",
     timestamp: "5 min ago",
     isSupporter: false,
@@ -104,7 +104,7 @@ const chatMessages = [
   {
     id: 4,
     user: "VirtualVibes",
-    avatar: "/placeholder-user.jpg",
+    avatar: "/Images/Placeholder/Avatar.png",
     message: "The future of music is here 🚀",
     timestamp: "7 min ago",
     isSupporter: true,

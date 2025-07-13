@@ -9,6 +9,7 @@ import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { useNavigate } from "react-router"
 
 interface ElysiumContent {
   id: string
@@ -137,6 +138,8 @@ const allTags = [
 ]
 
 export default function ExplorePage() {
+
+  const navigate = useNavigate()
   const [searchQuery, setSearchQuery] = useState("")
   const [selectedType, setSelectedType] = useState("all")
   const [sortBy, setSortBy] = useState("newest")
@@ -418,6 +421,7 @@ export default function ExplorePage() {
                             <Button
                               size="sm"
                               className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-r from-[#6a75f1] to-[#a28ad6] hover:from-[#a28ad6] hover:to-[#f5d87a]"
+                              onClick={() => navigate(`/${content.type}/1`)}
                             >
                               <Play className="w-4 h-4" />
                             </Button>

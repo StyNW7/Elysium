@@ -41,7 +41,7 @@ const mockEchoes = [
     isLiked: false,
     isReechoed: false,
     type: "original",
-    media: ["/placeholder.jpg"],
+    media: ["/Images/Content/Design-Elysium.png"],
   },
   {
     id: 2,
@@ -326,7 +326,7 @@ export default function EchoesPage() {
                                 {echo.media && (
                                   <div className="mt-4 rounded-xl overflow-hidden">
                                     <img
-                                      src={echo.media[0] || "/placeholder.svg"}
+                                      src={echo.media[0] || "/Images/Content/Elysium-Design.png"}
                                       alt="Echo media"
                                       className="w-full h-64 object-cover"
                                     />

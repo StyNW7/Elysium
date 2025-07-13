@@ -50,12 +50,12 @@ export default function RealmDetailPage() {
       "A mystical realm where dreams and reality intertwine, filled with ambient music, ethereal stories, and magical experiences that transport you to otherworldly dimensions.",
     creator: {
       name: "Luna Starweaver",
-      avatar: "/placeholder.svg?height=80&width=80",
+      avatar: "/Images/Placeholder/Avatar.png?height=80&width=80",
       verified: true,
       followers: 45200,
       bio: "Digital artist and world builder creating immersive experiences across multiple mediums.",
     },
-    coverImage: "/placeholder.svg?height=600&width=1200",
+    coverImage: "/Images/Content/Elysium-Design.png?height=600&width=1200",
     category: "Fantasy",
     tags: ["Dreamy", "Magical", "Peaceful", "Ambient", "Mystical"],
     stats: {
@@ -84,7 +84,7 @@ export default function RealmDetailPage() {
       title: "Ethereal Dreams",
       type: "music",
       description: "A mesmerizing ambient track that captures the essence of floating through dreamscapes.",
-      thumbnail: "/placeholder.svg?height=200&width=300",
+      thumbnail: "/Images/Content/Elysium-Design.png?height=200&width=300",
       duration: "4:32",
       views: 12500,
       likes: 890,
@@ -96,7 +96,7 @@ export default function RealmDetailPage() {
       title: "The Last Guardian",
       type: "video",
       description: "A short film exploring the mystical guardians of the ethereal realm.",
-      thumbnail: "/placeholder.svg?height=200&width=300",
+      thumbnail: "/Images/Content/Elysium-Design.png?height=200&width=300",
       duration: "12:45",
       views: 8900,
       likes: 567,
@@ -108,7 +108,7 @@ export default function RealmDetailPage() {
       title: "Quantum Quest",
       type: "game",
       description: "An interactive adventure through the quantum dimensions of the dreamscape.",
-      thumbnail: "/placeholder.svg?height=200&width=300",
+      thumbnail: "/Images/Content/Elysium-Design.png?height=200&width=300",
       duration: "∞",
       views: 15600,
       likes: 1200,
@@ -120,7 +120,7 @@ export default function RealmDetailPage() {
       title: "Whispers of the Void",
       type: "story",
       description: "A mystical tale of discovery in the ethereal realm's deepest mysteries.",
-      thumbnail: "/placeholder.svg?height=200&width=300",
+      thumbnail: "/Images/Content/Elysium-Design.png?height=200&width=300",
       duration: "15 min read",
       views: 6700,
       likes: 445,
@@ -132,7 +132,7 @@ export default function RealmDetailPage() {
       title: "Dreamscape Dialogues",
       type: "podcast",
       description: "Conversations about the nature of dreams and reality with ethereal beings.",
-      thumbnail: "/placeholder.svg?height=200&width=300",
+      thumbnail: "/Images/Content/Elysium-Design.png?height=200&width=300",
       duration: "45:20",
       views: 9800,
       likes: 678,
@@ -144,7 +144,7 @@ export default function RealmDetailPage() {
       title: "Celestial Harmony",
       type: "music",
       description: "Orchestral piece inspired by the movement of stars in the ethereal sky.",
-      thumbnail: "/placeholder.svg?height=200&width=300",
+      thumbnail: "/Images/Content/Elysium-Design.png?height=200&width=300",
       duration: "6:18",
       views: 18900,
       likes: 1456,
@@ -255,7 +255,7 @@ export default function RealmDetailPage() {
           <Card className="bg-white/5 border-white/10 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 overflow-hidden">
             <div className="relative">
               <img
-                src={item.thumbnail || "/placeholder.svg"}
+                src={item.thumbnail || "/Images/Content/Elysium-Design.png"}
                 alt={item.title}
                 className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
               />
@@ -343,7 +343,7 @@ export default function RealmDetailPage() {
           {/* Cover Image */}
           <div className="relative h-96 rounded-2xl overflow-hidden">
             <img
-              src={realmData.coverImage || "/placeholder.svg"}
+              src={realmData.coverImage || "/Images/Content/Elysium-Design.png"}
               alt={realmData.title}
               className="w-full h-full object-cover"
             />
@@ -371,7 +371,7 @@ export default function RealmDetailPage() {
                   {/* Creator Info */}
                   <div className="flex items-center space-x-4">
                     <Avatar className="w-12 h-12">
-                      <AvatarImage src={realmData.creator.avatar || "/placeholder.svg"} />
+                      <AvatarImage src={realmData.creator.avatar || "/Images/Content/Elysium-Design.png"} />
                       <AvatarFallback>LS</AvatarFallback>
                     </Avatar>
                     <div>
