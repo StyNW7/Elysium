@@ -23,7 +23,7 @@ import {
   Bell,
   Zap,
 } from "lucide-react"
-import { useLocation } from "react-router"
+import { useLocation, useNavigate } from "react-router"
 
 const menuItems = [
   {
@@ -88,11 +88,20 @@ const quickActions = [
   { title: "Upgrade to Pro", href: "/upgrade", icon: Crown },
 ]
 
+import { supabase } from "@/lib/supabase"
+
 export function DashboardSidebar() {
 
+  const navigate = useNavigate()
   const location = useLocation()
   const pathname = location.pathname
   const [isMobileOpen, setIsMobileOpen] = useState(false)
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    navigate("/auth")
+  }
+
 
   const SidebarContent = () => (
     <div className="flex flex-col h-screen">
@@ -178,7 +187,7 @@ export function DashboardSidebar() {
 
       {/* Fixed Logout */}
       <div className="p-4 border-t border-white/10 flex-none">
-        <Button variant="ghost" className="w-full justify-start text-white/70 hover:text-white hover:bg-red-500/10">
+        <Button variant="ghost" className="w-full justify-start text-white/70 hover:text-white hover:bg-red-500/10" onClick={handleLogout}>
           <LogOut className="h-4 w-4 mr-3" />
           Sign Out
         </Button>
